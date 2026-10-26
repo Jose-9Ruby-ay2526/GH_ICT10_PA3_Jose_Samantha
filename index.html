@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Game Developers</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: "Trebuchet MS", sans-serif;
+            background: #fff0f4;
+            color: #91445c;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: #9e4562;
+        }
+
+        .header p {
+            font-size: 17px;
+            color: #a35d73;
+        }
+
+        .game-icon {
+            font-size: 45px;
+            margin-bottom: 5px;
+        }
+
+        .card {
+            background: #fffafa;
+            padding: 30px;
+            border: 3px solid #ffd0df;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(190, 100, 130, 0.08);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 16px;
+            border: 2px solid #ffbfd2;
+            border-radius: 13px;
+            font-size: 16px;
+            outline: none;
+            background: #fffdfd;
+            color: #91445c;
+        }
+
+        input[type="text"]:focus {
+            border-color: #ed8eac;
+        }
+
+        input[type="button"] {
+            margin-top: 15px;
+            padding: 13px 30px;
+            border: none;
+            border-radius: 12px;
+            background: #ed8eac;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background: #d96f92;
+        }
+
+        .result-box {
+            margin-top: 25px;
+            padding: 20px;
+            min-height: 180px;
+            background: #fff1f5;
+            border: 2px solid #ffd6e2;
+            border-radius: 15px;
+            overflow-wrap: anywhere;
+        }
+
+        .result-box h2 {
+            margin-top: 0;
+            color: #a45b72;
+        }
+
+        #result {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #bb8194;
+            font-size: 14px;
+        }
+
+        @media (max-width: 500px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <div class="game-icon">🎮 💗</div>
+            <h1>Game Developers</h1>
+            <p>Check your favorite game and discover its developer!</p>
+        </div>
+
+        <div class="card">
+
+            <form>
+                <input
+                    type="text"
+                    id="dictionary"
+                    placeholder="Enter your favorite game..."
+                >
+
+                <br>
+
+                <input
+                    type="button"
+                    py-click="game_details"
+                    value="🔎 Search"
+                >
+            </form>
+
+            <div class="result-box">
+                <h2>Result: 💕</h2>
+                <div id="result">Your results will appear here!</div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Made with 💗 for gamers
+        </div>
+
+    </div>
+
+    <py-script src="main.py"></py-script>
+
+</body>
+</html>
