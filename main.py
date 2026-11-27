@@ -1,30 +1,23 @@
 
 from pyscript import document
 
-# Dictionary of game developers
-game_developers = {
-    'roblox': 'David Baszucki',
-    'codm': 'TiMi Studio',
-    'fnaf': 'Scott Cawthon',
-    'genshin impact': 'HoYoverse'
-}
+# Members in each grade
+grade_7 = {'Alex Rivera', 'Jamie Cruz'}
+grade_8 = {'Sam Lee', 'Taylor Smith'}
+grade_9 = {'Chris Tan', 'Jordan Reyes'}
+grade_10 = {'Morgan Lim', 'Casey Santos'}
 
+# Function to add a member
+def add_member(event):
+    fname = document.querySelector("#fname").value
+    lname = document.querySelector("#lname").value
 
-def game_details(e=None):
-    favorite_game = document.getElementById('dictionary').value.lower().strip()
-    output = document.getElementById('result')
+    new_member = fname + " " + lname
 
-    if favorite_game in game_developers:
-        developer = game_developers[favorite_game]
+    all_members = grade_7.union(grade_8, grade_9, grade_10, {new_member})
 
-        output.innerHTML = f"""
-            <strong>Game:</strong> {favorite_game.title()}<br>
-            <strong>Developer:</strong> {developer}
-        """
-
-    else:
-        output.innerHTML = """
-            <span style="color: #d96f92;">
-                Game not found. Try Roblox, CODM, FNAF, or Genshin Impact.
-            </span>
-        """
+    document.querySelector("#output").innerHTML = f"""
+        <p><b>{new_member}</b> has been added! 💗</p>
+        <p>Updated club members:</p>
+        <p>{', '.join(sorted(all_members))}</p>
+    """
